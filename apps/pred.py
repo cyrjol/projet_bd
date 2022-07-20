@@ -158,7 +158,7 @@ def app():
                 st.line_chart(pred_3['0']) 
                 
                 st.write("""
-                         As you can see, in every scenario our model succeed to predict the beginning of the anomali which is our goal, thus even if the graphics look not so good, they are.
+                         As you can see, in every scenario our model succeed to predict the beginning of the anomaly which is our goal, thus even if the graphics look not so good, they are.
                                                   
                          """) 
                 
