@@ -87,7 +87,9 @@ def app():
               st.line_chart(pred_10['0']) 
                
               st.write("""
-                       As you can see, at the exception of a few noise on the first two scenario (which is acceptable) our prediction is satisfying.
+                       As you can see, at the exception of a few noise on the first two scenario our prediction is satisfying.
+                       
+                       These false anomalies happen during the Summer when the water demands varies more which misslead our model, yet it is acceptable.
                        
                        
                        """) 
@@ -124,7 +126,9 @@ def app():
                 
                 
                 st.write("""
-                         As you can see, at the exception of a few noise on the 5th scenario (which is acceptable) our prediction is satisfying.
+                         As you can see, at the exception of a few noise on the 5th scenario (like with the 'no leak' scenarios) our prediction is satisfying.
+                         
+                         
                          
                          
                          """) 
@@ -158,8 +162,11 @@ def app():
                 st.line_chart(pred_3['0']) 
                 
                 st.write("""
-                         As you can see, in every scenario our model succeed to predict the beginning of the anomaly which is our goal, thus even if the graphics look not so good, they are.
-                                                  
+                         As you can see, in every scenario our model succeed to predict the beginning of the anomaly which is our goal.
+                         For the 1st scenario, the model succesfully predict the first anomalies but at some point it does no longer consider them as anomalies when the flow reduces.
+                         For the 2nd scenario, the prediction is almost perfect.
+                         For the 3rd scenario, we have the same results as with the 1st scenario.
+                         Thus our prediction is satisfying.
                          """) 
                 
                 
