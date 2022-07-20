@@ -16,44 +16,44 @@ def app():
              
     
     #data not scaled for plotting ( i:i,cipient, a: abrupt, n: no leaked)
-        i_1 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-1/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
-        i_2 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-2/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
-        i_3 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-3/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
+        i_1 = pd.read_csv('data/scenario1/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
+        i_2 = pd.read_csv('data/scenario2/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
+        i_3 = pd.read_csv('data/scenario3/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
 
 
-        a_5 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-5/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
-        a_6 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-22/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
-        a_22 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-22/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
+        a_5 = pd.read_csv('data/scenario5/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
+        a_6 = pd.read_csv('data/scenario6/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
+        a_22 = pd.read_csv('data/scenario22/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
 
 
-        n_4 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-4/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
-        n_7 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-7/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
-        n_10 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-10/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
+        n_4 = pd.read_csv('data/scenario4/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
+        n_7 = pd.read_csv('data/scenario7/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
+        n_10 = pd.read_csv('data/scenario10/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
     #data not scaled for plotting
     
     #true labels
     
-        l_1 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-1/y.csv', parse_dates=['timestamp'], index_col='timestamp')
-        l_2 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-2/y.csv', parse_dates=['timestamp'], index_col='timestamp')
-        l_3 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-3/y.csv', parse_dates=['timestamp'], index_col='timestamp')
-        l_4 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-4/y.csv', parse_dates=['timestamp'], index_col='timestamp')
-        l_5 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-5/y.csv', parse_dates=['timestamp'], index_col='timestamp')
-        l_6 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-6/y.csv', parse_dates=['timestamp'], index_col='timestamp')
-        l_7 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-7/y.csv', parse_dates=['timestamp'], index_col='timestamp')
-        l_10 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-10/y.csv', parse_dates=['timestamp'], index_col='timestamp')
-        l_22 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-22/y.csv', parse_dates=['timestamp'], index_col='timestamp')
+        l_1 = pd.read_csv('data/scenario1/y.csv', parse_dates=['timestamp'], index_col='timestamp')
+        l_2 = pd.read_csv('data/scenario2/y.csv', parse_dates=['timestamp'], index_col='timestamp')
+        l_3 = pd.read_csv('data/scenario3/y.csv', parse_dates=['timestamp'], index_col='timestamp')
+        l_4 = pd.read_csv('data/scenario4/y.csv', parse_dates=['timestamp'], index_col='timestamp')
+        l_5 = pd.read_csv('data/scenario5/y.csv', parse_dates=['timestamp'], index_col='timestamp')
+        l_6 = pd.read_csv('data/scenario6/y.csv', parse_dates=['timestamp'], index_col='timestamp')
+        l_7 = pd.read_csv('data/scenario7/y.csv', parse_dates=['timestamp'], index_col='timestamp')
+        l_10 = pd.read_csv('data/scenario10/y.csv', parse_dates=['timestamp'], index_col='timestamp')
+        l_22 = pd.read_csv('data/scenario22/y.csv', parse_dates=['timestamp'], index_col='timestamp')
     
     
     #labels predicted
-        pred_1 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-1/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')
-        pred_2 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-2/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')
-        pred_3 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-3/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')
-        pred_4 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-4/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')
-        pred_5 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-5/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')
-        pred_6 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-6/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')
-        pred_7 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-7/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')
-        pred_10 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-10/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')
-        pred_22 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-22/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')
+        pred_1 = pd.read_csv('data/scenario1/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')
+        pred_2 = pd.read_csv('data/scenario2/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')
+        pred_3 = pd.read_csv('data/scenario3/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')
+        pred_4 = pd.read_csv('data/scenario4/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')
+        pred_5 = pd.read_csv('data/scenario5/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')
+        pred_6 = pd.read_csv('data/scenario6/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')
+        pred_7 = pd.read_csv('data/scenario7/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')
+        pred_10 = pd.read_csv('data/scenario10/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')
+        pred_22 = pd.read_csv('data/scenario22/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')
         
         options = st.multiselect('What type of scenario do you want to see ?',['No Leak','Incipient','Abrupt'])
         
