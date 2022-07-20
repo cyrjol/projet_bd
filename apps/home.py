@@ -49,10 +49,10 @@ def app():
     
     
     st.caption('Demand Node 10')
-    st.line_chart(pd.read_csv('/data/scenario1/Node_10.csv')['Value'])
+    st.line_chart(pd.read_csv('data/scenario1/Node_10.csv')['Value'])
      
     st.caption('Pressure Node 9')
-    st.line_chart(pd.read_csv('/data/scenario1/Node_9.csv')['Value'])
+    st.line_chart(pd.read_csv('data/scenario1/Node_9.csv')['Value'])
     
     st.write("""
              Those 2 features **(Demand Node 10 & Pressure Node 9)** are null for every scenario, thus we will not consider them in our dataset.
@@ -66,7 +66,7 @@ def app():
              As this point, our data is ready to be manipulated, as we will see on the **DATA** section
              
              """)
-    st.dataframe(pd.read_csv('/data/scenario1/df_full.csv'))
+    st.dataframe(pd.read_csv('data/scenario1/df_full.csv'))
     
     
     
