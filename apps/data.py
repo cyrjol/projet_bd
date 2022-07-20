@@ -22,7 +22,7 @@ def app():
              
              """)
     st.caption('Correlation Matrix')
-    st.dataframe(pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-1/corr.csv'))
+    st.dataframe(pd.read_csv('data/scenario1/corr.csv'))
     
    
              
@@ -34,7 +34,7 @@ def app():
              Moreover we are now indexing the dataframe by timestamp, and we have **scaled** the data so it would be easier to train our model in the future. 
              
              """)
-    st.dataframe(pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-1/df_min.csv',parse_dates=['timestamp'], index_col='timestamp'))
+    st.dataframe(pd.read_csv('data/scenario1/df_min.csv',parse_dates=['timestamp'], index_col='timestamp'))
     
     st.header('Training')
     st.write("""
@@ -49,15 +49,15 @@ def app():
              """)
              
              
-    pred = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-505/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')   
-    y = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-505/y.csv', parse_dates=['timestamp'], index_col='timestamp')      
+    pred = pd.read_csv('data/scenario505/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')   
+    y = pd.read_csv('data/scenario505/y.csv', parse_dates=['timestamp'], index_col='timestamp')      
     
     st.caption('True Anomalies')
     st.line_chart(y['Label'])
     st.caption('Predicted Anomalies')
     st.line_chart(pred['0'])
     
-    mat =Image.open("C:/Users/cjoly/projet/Net1_CMH/Scenario-505/matrix.PNG")
+    mat =Image.open("data/scenario505/matrix.PNG")
     st.image(mat, caption='Training Confusion Matrix')
     
     st.write("""
@@ -75,14 +75,14 @@ def app():
              
              """)
              
-    pred_2 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-2/pred.csv', parse_dates=['timestamp'], index_col='timestamp')   
-    y_2 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-2/y.csv', parse_dates=['timestamp'], index_col='timestamp')      
+    pred_2 = pd.read_csv('data/scenario2/pred.csv', parse_dates=['timestamp'], index_col='timestamp')   
+    y_2 = pd.read_csv('data/scenario2/y.csv', parse_dates=['timestamp'], index_col='timestamp')      
     st.caption('True Anomalies') 
     st.line_chart(y_2['Label'])
     st.caption('Predicted Anomalies')
     st.line_chart(pred_2['0'])
      
-    mat =Image.open("C:/Users/cjoly/projet/Net1_CMH/Scenario-2/matrix1.PNG")
+    mat =Image.open("data/scenario2/matrix1.PNG")
     st.image(mat, caption='Test Confusion Matrix')        
     
     st.write("""
@@ -103,13 +103,13 @@ def app():
              
              """)
              
-    data_2 = pd.read_csv('C:/Users/cjoly/projet/Net1_CMH/Scenario-2/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')   
+    data_2 = pd.read_csv('data/scenario2/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')   
     st.caption('True Anomalies')
     st.line_chart(y_2['Label'])
     st.caption('Predicted Anomalies')
     st.line_chart(data_2['0'])
      
-    mat =Image.open("C:/Users/cjoly/projet/Net1_CMH/Scenario-2/matrix2.PNG")
+    mat =Image.open("data/scenario2/matrix2.PNG")
     st.image(mat, caption='Test Confusion Matrix') 
     
     
