@@ -24,7 +24,7 @@ def app():
      
      The simulated network model looks like the following picture :
                   """)
-    network =Image.open("projet_bd/network.PNG")
+    network =Image.open("network.PNG")
     st.image(network, caption='Water Distribution Network')
     
     st.header( "Dataset description") 
