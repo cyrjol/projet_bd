@@ -57,7 +57,7 @@ def app():
     st.caption('Predicted Anomalies')
     st.line_chart(pred['0'])
     
-    mat =Image.open("data/scenario505/matrix.PNG")
+    mat =Image.open("data/scenario505/matrix.png")
     st.image(mat, caption='Training Confusion Matrix')
     
     st.write("""
@@ -82,7 +82,7 @@ def app():
     st.caption('Predicted Anomalies')
     st.line_chart(pred_2['0'])
      
-    mat =Image.open("data/scenario2/matrix1.PNG")
+    mat =Image.open("data/scenario2/matrix1.png")
     st.image(mat, caption='Test Confusion Matrix')        
     
     st.write("""
@@ -109,7 +109,7 @@ def app():
     st.caption('Predicted Anomalies')
     st.line_chart(data_2['0'])
      
-    mat =Image.open("data/scenario2/matrix2.PNG")
+    mat =Image.open("data/scenario2/matrix2.png")
     st.image(mat, caption='Test Confusion Matrix') 
     
     
