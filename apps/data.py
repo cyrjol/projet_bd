@@ -48,14 +48,16 @@ def app():
     st.header('Training')
     st.write("""
              
-             We could use 2 approach:
+             We could have used 2 approach:
                 - Time Series
-                - Unsupervised Classification (that wee choose  because it had better results )
-                          
+                - Unsupervised Classification 
+            
+            We choose the 2nd option because it had better results.             
              Eventhough the dataset contains labels, we want to use an **unsupervised** model which would be more accurate of a real use case where we do not have the labels instateniously.
             
              We consider different unsupervised model especially effective on anomaly detection case like *kNN, Isolation Forest, (Variational) Autoencoder* and *GAN*.
-             Yet, we had the best results with a **PCA unsupervised model**.
+             
+             At the end, we had the best results with a **PCA** model.
              
                           
              Here are the results :
