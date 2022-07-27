@@ -70,7 +70,7 @@ def app():
     st.caption('True Anomalies')
     st.line_chart(y['Label'])
     st.caption('Predicted Anomalies')
-    st.line_chart(pred['0'])
+    st.line_chart(y['Label']+pred['0'])
     
     mat =Image.open("data/scenario505/matrix.png")
     st.image(mat, caption='Training Confusion Matrix')
