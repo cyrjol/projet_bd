@@ -21,6 +21,8 @@ def app():
      The dataset is comprised of all leakage scenario parameters, hydraulic dynamics(flows, pressures), node demands and the network model.
      
      Each leakage is also assigned a time profile, categorizing them as abrupt leakages, or incipient leakages which increase gradually.
+     Moreover, each leakage may remain for a longer or shorter period of time depending on whether the leak is found and repaired, corresponding to a % of leak.
+     Thus we will present the different scenario as : scenario X with Y% of leak
      
      The simulated network model looks like the following picture :
                   """)
