@@ -120,7 +120,7 @@ def app():
                                      """)
              
     data_2 = pd.read_csv('data/scenario2/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')   
-    y = y_2.merge(pred_2,how='left', left_index=True, right_index=True)
+    y = y_2.merge(data__2,how='left', left_index=True, right_index=True)
     y.rename(columns={'Label': 'True', '0':'Predicted'},inplace=True)
     st.caption('Anomalies')
     st.line_chart(y[['True','Predicted']])
