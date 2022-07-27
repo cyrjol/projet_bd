@@ -75,8 +75,7 @@ def app():
     mat =Image.open("data/scenario505/matrix.png")
     st.image(mat, caption='Training Confusion Matrix')
     
-    st.write("""
-             
+    st.write("""           
              Our model is not perfect, yet we witness two interesting points to begin :
                 - Our model has a few false anomalies ( 2% of the predicted anomalies )
                 - The beginning of the leak is well predicted
@@ -88,7 +87,7 @@ def app():
     st.header('Test')
     st.write("""
              
-             We test the model on the 2nd scenario (incipient with 5% of leak) :
+             We test the model on the 2nd scenario : incipient with 5% of leak over the year, to see how the model is doing on a more subtle leak.
              
              """)
              
@@ -104,21 +103,22 @@ def app():
     
     st.write("""
              
-             We can see that our model has a pretty good accurracy but it is far from perfect, indeed there is a lot of noise.
+             We can see that our model has a pretty good metrics :
+                - Negative Predictive Value : 84,11%
+                - Specify Rate : 68,77 %
+             
+             Yet, it is far from perfect because there is a lot of noise.
              
              To avoid that we will try to **smooth** the data. 
              
              """)
     st.subheader('Smoothing')         
-    st.write("""
-             
-                            
-            For each prediction : *we round the mean of the prediction on the last day*
-                 
+    st.write("""                                       
+            We have noticed that most false anomalies are isolated (1 or 2 per day), but if there is a leak it lasts several days.
+            Thus, our smoothing method is to consider that there is an anomaly if the average over the last 24 hours >50%.     
+            
             Let's look at that!
-                
-             
-             """)
+                                     """)
              
     data_2 = pd.read_csv('data/scenario2/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')   
     st.caption('True Anomalies')
@@ -133,7 +133,11 @@ def app():
     
     st.write("""
              
-             We have a satisfying accuraccy.
+             Now the metrics are impressive :
+                - Negative Predictive Value : 84%
+                - Specify Rate : 100 %
+                
+             We have eliminated all the false anomalies and with our smoothing filter we can detect a leak 12h after its beginning.
              
              Our model looks ready, we will apply it to 3 scenario of each type in the **PREDICTION** page.
                 
