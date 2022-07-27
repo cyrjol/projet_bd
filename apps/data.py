@@ -67,10 +67,9 @@ def app():
     pred = pd.read_csv('data/scenario505/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')   
     y = pd.read_csv('data/scenario505/y.csv', parse_dates=['timestamp'], index_col='timestamp')      
     y = y.merge(pred,how='left', left_index=True, right_index=True)
+    y.rename('Label': '0', 'True':'Predicted')
     st.caption('Anomalies')
-    st.line_chart(y[['Label','0']])
-    st.caption('Predicted Anomalies')
-    st.line_chart(y['Label']+pred['0'])
+    st.line_chart(y[['True','Predicted']])
     
     mat =Image.open("data/scenario505/matrix.png")
     st.image(mat, caption='Training Confusion Matrix')
