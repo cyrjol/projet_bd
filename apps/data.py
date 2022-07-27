@@ -11,6 +11,14 @@ import pandas as pd
 from PIL import Image
 def app():
     st.header('Data processing')
+    
+    st.write("""
+             
+             After some experimentation, we choose to do the preprocessing and the training on the 505th scenario because it is an abrupt scenario with a total of 15% of leak on the year,
+             so the model has a certain amount of leak to detect. 
+             
+             
+             """)
 
     st.subheader("Correlation Matrix")
     st.write("""
@@ -28,8 +36,9 @@ def app():
              
     st.subheader("Final dataset") 
     st.write("""
+             We wanted at least 1 feature for each categorie ( Demands, Links, Pressures) and we eliminate the others features with more than **0.9** correlation.
              
-             At this point we can reduce the set of features to only 4 features without loosing most of the information in the original dataset.
+             Thus we can reduce the set of features to only **4 features** without loosing most of the information in the original dataset.
              
              Moreover we are now indexing the dataframe by timestamp, and we have **scaled** the data so it would be easier to train our model in the future. 
              
@@ -39,12 +48,16 @@ def app():
     st.header('Training')
     st.write("""
              
+             We could use 2 approach:
+                - Time Series
+                - Unsupervised Classification (that wee choose  because it had better results )
+                          
              Eventhough the dataset contains labels, we want to use an **unsupervised** model which would be more accurate of a real use case where we do not have the labels instateniously.
             
-             After considering different model, we choose to use a **PCA unsupervised model**, which is particularly efficient in case of anomaly detection.
+             We consider different unsupervised model especially effective on anomaly detection case like *kNN, Isolation Forest, (Variational) Autoencoder* and *GAN*.
+             Yet, we had the best results with a **PCA unsupervised model**.
              
-             We train our model on the 505th scenario (abrupt with 15% of leak), so the model could detect a certain amount of anomalies.
-             
+                          
              Here are the results :
              """)
              
