@@ -14,7 +14,7 @@ def app():
     
     st.write("""
              
-             After some experimentation, we choose to do the preprocessing and the training on the 505th scenario because it is an abrupt scenario with a total of 15% of leak on the year,
+             After some experimentation, we choose to do the preprocessing and the training on the 505th scenario because it is an abrupt scenario with a total of 20% of leak on the year,
              so the model has a certain amount of leak to detect. 
              
              
@@ -77,7 +77,9 @@ def app():
     
     st.write("""
              
-             Our model is not the best, yet, it has predicted most of the anomalies at the beginning, which is a good beginning.
+             Our model is not perfect, yet we witness two interesting points to begin :
+                - Our model has a few false anomalies ( 2% of the predicted anomalies )
+                - The beginning of the leak is well predicted
              
              Let's test this model on other scenario to see how it is doing.
              
