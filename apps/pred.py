@@ -10,7 +10,7 @@ def app():
     
         st.write("""
              # Prediction
-             For each type of scenario (incipient, abrupt or no leak) we choose 3 different scenario with various % of leakage to see the accuraccy of the prediction of our model.
+             For each type of scenario (incipient, abrupt or no leak) we have chosen 3 different scenario with various leakage % to see our model's performance .
              
              """)
              
@@ -55,6 +55,36 @@ def app():
         pred_10 = pd.read_csv('data/scenario10/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')
         pred_22 = pd.read_csv('data/scenario22/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')
         
+        
+        y_1 = l_1.merge(pred_1,how='left', left_index=True, right_index=True)
+        y_1.rename(columns={'Label': 'True', '0':'Predicted'},inplace=True)
+        
+        y_2 = l_2.merge(pred_2,how='left', left_index=True, right_index=True)
+        y_2.rename(columns={'Label': 'True', '0':'Predicted'},inplace=True)
+        
+        y_3 = l_3.merge(pred_3,how='left', left_index=True, right_index=True)
+        y_3.rename(columns={'Label': 'True', '0':'Predicted'},inplace=True)
+        
+        y_4 = l_4.merge(pred_4,how='left', left_index=True, right_index=True)
+        y_4.rename(columns={'Label': 'True', '0':'Predicted'},inplace=True)
+        
+        y_5 = l_5.merge(pred_5,how='left', left_index=True, right_index=True)
+        y_5.rename(columns={'Label': 'True', '0':'Predicted'},inplace=True)
+        
+        y_6 = l_6.merge(pred_6,how='left', left_index=True, right_index=True)
+        y_6.rename(columns={'Label': 'True', '0':'Predicted'},inplace=True)
+        
+        y_7 = l_7.merge(pred_7,how='left', left_index=True, right_index=True)
+        y_7.rename(columns={'Label': 'True', '0':'Predicted'},inplace=True)
+        
+        y_10 = l_10.merge(pred_10,how='left', left_index=True, right_index=True)
+        y_10.rename(columns={'Label': 'True', '0':'Predicted'},inplace=True)
+        
+        y_22 = l_22.merge(pred_22,how='left', left_index=True, right_index=True)
+        y_22.rename(columns={'Label': 'True', '0':'Predicted'},inplace=True)
+        
+        
+        
         options = st.multiselect('What type of scenario do you want to see ?',['No Leak','Incipient','Abrupt'])
         
         for i in options :
@@ -64,27 +94,20 @@ def app():
               st.subheader("Scenario 4")
               st.caption("Link 21 flow")
               st.line_chart(n_4['Link 21'])
-              st.caption('True anomalies')
-              st.line_chart(l_4['Label'])
-              st.caption('Predicted Anomalies')
-              st.line_chart(pred_4['0'])
+              st.caption('Anomalies')
+              st.line_chart(y_4[['True','Predicted']])
               
               
               st.subheader("Scenario 7")
               st.caption("Link 21 flow")
-              st.line_chart(n_7['Link 21'])
-              st.caption('True anomalies')
-              st.line_chart(l_7['Label'])
-              st.caption('Predicted Anomalies')
-              st.line_chart(pred_7['0'])
+              st.caption('Anomalies')
+              st.line_chart(y_7[['True','Predicted']])
               
               st.subheader("Scenario 10")
               st.caption("Link 21 flow")
               st.line_chart(n_10['Link 21'])
-              st.caption('True anomalies')
-              st.line_chart(l_10['Label'])
-              st.caption('Predicted Anomalies')
-              st.line_chart(pred_10['0']) 
+              st.caption('Anomalies')
+              st.line_chart(y_10[['True','Predicted']]) 
                
               st.write("""
                        As you can see, at the exception of a few noise on the first two scenario our prediction is satisfying.
@@ -101,27 +124,20 @@ def app():
                 st.subheader("Scenario 5")
                 st.caption("Link 21 flow")
                 st.line_chart(a_5['Link 21'])
-                st.caption('True anomalies')
-                st.line_chart(l_5['Label'])
-                st.caption('Predicted Anomalies')
-                st.line_chart(pred_5['0'])
+                st.caption('Anomalies')
+              st.line_chart(y_5[['True','Predicted']])
                 
                 
                 st.subheader("Scenario 6")
                 st.caption("Link 21 flow")
                 st.line_chart(a_6['Link 21'])
-                st.caption('True anomalies')
-                st.line_chart(l_6['Label'])
-                st.caption('Predicted Anomalies')
-                st.line_chart(pred_6['0'])
+                st.caption('Anomalies')
+                st.line_chart(y_6[['True','Predicted']])
                 
                 st.subheader("Scenario 22")
                 st.caption("Link 21 flow")
-                st.line_chart(a_22['Link 21'])
-                st.caption('True anomalies')
-                st.line_chart(l_22['Label'])
-                st.caption('Predicted Anomalies')
-                st.line_chart(pred_22['0']) 
+                st.caption('Anomalies')
+                st.line_chart(y_22[['True','Predicted']]) 
                 
                 
                 
@@ -139,27 +155,21 @@ def app():
                 st.subheader("Scenario 1")
                 st.caption("Link 21 flow")
                 st.line_chart(i_1['Link 21'])
-                st.caption('True anomalies')
-                st.line_chart(l_1['Label'])
-                st.caption('Predicted Anomalies')
-                st.line_chart(pred_1['0'])
+                st.caption('Anomalies')
+                st.line_chart(y_1[['True','Predicted']])
                 
                 
                 st.subheader("Scenario 2")
                 st.caption("Link 21 flow")
                 st.line_chart(i_2['Link 21'])
-                st.caption('True anomalies')
-                st.line_chart(l_2['Label'])
-                st.caption('Predicted Anomalies')
-                st.line_chart(pred_2['0'])
+                st.caption('Anomalies')
+                st.line_chart(y_2[['True','Predicted']])
                 
                 st.subheader("Scenario 3")
                 st.caption("Link 21 flow")
                 st.line_chart(i_3['Link 21'])
-                st.caption('True anomalies')
-                st.line_chart(l_3['Label'])
-                st.caption('Predicted Anomalies')
-                st.line_chart(pred_3['0']) 
+                st.caption('Anomalies')
+                st.line_chart(y_3[['True','Predicted']]) 
                 
                 st.write("""
                          As you can see, in every scenario our model succeed to predict the beginning of the anomaly which is our goal.
