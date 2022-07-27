@@ -31,7 +31,7 @@ def app():
     
     st.write("""
              
-             Our dataset is composed of **17520 rows** which corresponds to 1 measure every 30min during a year, and **35 features** distribute in 3 categories :
+             Our dataset is composed of **17520 rows** which corresponds to 1 measure every 30min during a year, and **33 features** distribute in 3 categories :
             - **Nodes X :** values of the demand of water at each node 
                      
             - **Links X :** values of flows between the nodes 
@@ -40,30 +40,12 @@ def app():
              
              
              """)   
-    st.subheader('Data cleaning')
-    st.write("""
-             First, we visualized all the different features and we noticed that :
-             
-                         
-             """)
-    
-    
-    st.caption('Demand Node 10')
-    st.line_chart(pd.read_csv('data/scenario1/Node_10.csv')['Value'])
-     
-    st.caption('Pressure Node 9')
-    st.line_chart(pd.read_csv('data/scenario1/Node_9.csv')['Value'])
-    
-    st.write("""
-             Those 2 features **(Demand Node 10 & Pressure Node 9)** are null for every scenario, thus we will not consider them in our dataset.
-             
-             """)
-    
+      
      
     st.subheader("Full dataset")   
     st.write("""
              
-             As this point, our data is ready to be manipulated, as we will see on the **DATA** section
+             As this point, our data is ready to be manipulated, here is an example of the raw data of the 1st scenario 
              
              """)
     st.dataframe(pd.read_csv('data/scenario1/df_full.csv'))
