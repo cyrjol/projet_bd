@@ -92,10 +92,10 @@ def app():
              
     pred_2 = pd.read_csv('data/scenario2/pred.csv', parse_dates=['timestamp'], index_col='timestamp')   
     y_2 = pd.read_csv('data/scenario2/y.csv', parse_dates=['timestamp'], index_col='timestamp')      
-    st.caption('True Anomalies') 
-    st.line_chart(y_2['Label'])
-    st.caption('Predicted Anomalies')
-    st.line_chart(pred_2['0'])
+    y = y_2.merge(pred_2,how='left', left_index=True, right_index=True)
+    y.rename('Label': '0', 'True':'Predicted')
+    st.caption('Anomalies')
+    st.line_chart(y[['True','Predicted']])
      
     mat =Image.open("data/scenario2/matrix1.png")
     st.image(mat, caption='Test Confusion Matrix')        
@@ -120,10 +120,10 @@ def app():
                                      """)
              
     data_2 = pd.read_csv('data/scenario2/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')   
-    st.caption('True Anomalies')
-    st.line_chart(y_2['Label'])
-    st.caption('Predicted Anomalies')
-    st.line_chart(data_2['0'])
+    y = y_2.merge(pred_2,how='left', left_index=True, right_index=True)
+    y.rename('Label': '0', 'True':'Predicted')
+    st.caption('Anomalies')
+    st.line_chart(y[['True','Predicted']])
      
     mat =Image.open("data/scenario2/matrix2.png")
     st.image(mat, caption='Test Confusion Matrix') 
