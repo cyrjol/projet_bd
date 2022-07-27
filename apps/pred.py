@@ -125,7 +125,7 @@ def app():
                 st.caption("Link 21 flow")
                 st.line_chart(a_5['Link 21'])
                 st.caption('Anomalies')
-              st.line_chart(y_5[['True','Predicted']])
+                st.line_chart(y_5[['True','Predicted']])
                 
                 
                 st.subheader("Scenario 6")
