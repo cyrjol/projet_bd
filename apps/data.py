@@ -66,9 +66,9 @@ def app():
              
     pred = pd.read_csv('data/scenario505/pred_data.csv', parse_dates=['timestamp'], index_col='timestamp')   
     y = pd.read_csv('data/scenario505/y.csv', parse_dates=['timestamp'], index_col='timestamp')      
-    
-    st.caption('True Anomalies')
-    st.line_chart(y['Label'])
+    y = y.join(pred)
+    st.caption('Anomalies')
+    st.line_chart(y['Label','0'])
     st.caption('Predicted Anomalies')
     st.line_chart(y['Label']+pred['0'])
     
