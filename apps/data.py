@@ -9,6 +9,7 @@ This is a temporary script file.
 import streamlit as st
 import pandas as pd
 from PIL import Image
+import plotly.express as px 
 def app():
     st.header('Data processing')
       
