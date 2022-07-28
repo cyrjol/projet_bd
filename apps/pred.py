@@ -6,7 +6,6 @@ Created on Mon Jul 18 11:30:34 2022
 """
 import streamlit as st
 import pandas as pd
-pip install plotly
 import plotly.express as px 
 def app():
     
