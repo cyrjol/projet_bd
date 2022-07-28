@@ -33,7 +33,7 @@ def app():
     
     st.write("""
              
-             Our dataset is composed of **17520 rows** which corresponds to 1 measure every 30min during a year, and **33 features** distribute in 3 categories :
+             Our dataset is composed of **17520 rows** which corresponds to 1 measure every 30min during a year, and **29 features** distribute in 3 categories :
             - **Nodes X :** values of the demand of water at each node 
                      
             - **Links X :** values of flows between the nodes 
