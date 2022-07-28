@@ -92,22 +92,28 @@ def app():
               st.header('No leak scenario')  
                 
               st.subheader("Scenario 4")
-              st.caption("Link 21 flow")
-              st.line_chart(n_4['Link 21'])
+              st.caption("Node 11 Demands")
+              plot=px.scatter(x=n_4.index,y='Node 11', data_frame=n_4)
+              st.plotly_chart(plot)
               st.caption('Anomalies')
-              st.line_chart(y_4[['True','Predicted']])
+              plot=px.scatter(x=y_4.index,y='Predicted', data_frame=y_4,color="True")
+              st.plotly_chart(plot)
               
               
               st.subheader("Scenario 7")
-              st.caption("Link 21 flow")
+              st.caption("Node 11 Demands")
+              plot=px.scatter(x=n_7.index,y='Node 11', data_frame=n_7)
+              st.plotly_chart(plot)
               st.caption('Anomalies')
-              st.line_chart(y_7[['True','Predicted']])
+              plot=px.scatter(x=y_7.index,y='Predicted', data_frame=y_7,color="True")
+              st.plotly_chart(plot)
               
               st.subheader("Scenario 10")
-              st.caption("Link 21 flow")
-              st.line_chart(n_10['Link 21'])
+              plot=px.scatter(x=n_10.index,y='Node 11', data_frame=n_10)
+              st.plotly_chart(plot)
               st.caption('Anomalies')
-              st.line_chart(y_10[['True','Predicted']]) 
+              plot=px.scatter(x=y_10.index,y='Predicted', data_frame=y_10,color="True")
+              st.plotly_chart(plot) 
                
               st.write("""
                        As you can see, at the exception of a few noise on the first two scenario our prediction is satisfying.
@@ -115,6 +121,7 @@ def app():
                        These false anomalies happen during the Summer when the water demands varies more which misslead our model, yet it is acceptable.
                        
                        
+                       Therefore our prediction is satisfying.
                        """) 
 
 
@@ -122,28 +129,36 @@ def app():
                 st.header('Abrupt scenario')
                 
                 st.subheader("Scenario 5")
-                st.caption("Link 21 flow")
-                st.line_chart(a_5['Link 21'])
+                st.caption("Node 11 Demands")
+                plot=px.scatter(x=a_5.index,y='Node 11', data_frame=a_5)
+                st.plotly_chart(plot)
                 st.caption('Anomalies')
-                st.line_chart(y_5[['True','Predicted']])
+                plot=px.scatter(x=y_5.index,y='Predicted', data_frame=y_5,color="True")
+                st.plotly_chart(plot)
                 
                 
                 st.subheader("Scenario 6")
-                st.caption("Link 21 flow")
-                st.line_chart(a_6['Link 21'])
+                st.caption("Node 11 Demands")
+                plot=px.scatter(x=a_6.index,y='Node 11', data_frame=a_6)
+                st.plotly_chart(plot)
                 st.caption('Anomalies')
-                st.line_chart(y_6[['True','Predicted']])
+                plot=px.scatter(x=y_6.index,y='Predicted', data_frame=y_6,color="True")
+                st.plotly_chart(plot)
                 
                 st.subheader("Scenario 22")
-                st.caption("Link 21 flow")
+                plot=px.scatter(x=a_22.index,y='Node 11', data_frame=a_22)
+                st.plotly_chart(plot)
                 st.caption('Anomalies')
-                st.line_chart(y_22[['True','Predicted']]) 
+                plot=px.scatter(x=y_22.index,y='Predicted', data_frame=y_22,color="True")
+                st.plotly_chart(plot)
                 
                 
                 
                 st.write("""
-                         As you can see, at the exception of a few noise on the 5th scenario (like with the 'no leak' scenarios) our prediction is satisfying.
                          
+                         In each scenario, we can predict leaks in less than a day.
+                         
+                         Therefore our prediction is satisfying.
                          
                          
                          
@@ -153,31 +168,40 @@ def app():
                 st.header('Incipient scenario')
                 
                 st.subheader("Scenario 1")
-                st.caption("Link 21 flow")
-                st.line_chart(i_1['Link 21'])
+                st.caption("Node 11 Demands")
+                plot=px.scatter(x=i_1.index,y='Node 11', data_frame=i_1)
+                st.plotly_chart(plot)
                 st.caption('Anomalies')
-                st.line_chart(y_1[['True','Predicted']])
+                plot=px.scatter(x=y_1.index,y='Predicted', data_frame=y_1,color="True")
+                st.plotly_chart(plot)
                 
                 
                 st.subheader("Scenario 2")
-                st.caption("Link 21 flow")
-                st.line_chart(i_2['Link 21'])
+                st.caption("Node 11 Demands")
+                plot=px.scatter(x=i_2.index,y='Node 11', data_frame=i_2)
+                st.plotly_chart(plot)
                 st.caption('Anomalies')
-                st.line_chart(y_2[['True','Predicted']])
+                plot=px.scatter(x=y_2.index,y='Predicted', data_frame=y_2,color="True")
+                st.plotly_chart(plot)
                 
                 st.subheader("Scenario 3")
-                st.caption("Link 21 flow")
-                st.line_chart(i_3['Link 21'])
+                st.caption("Node 11 Demands")
+                plot=px.scatter(x=i_3.index,y='Node 11', data_frame=i_3)
+                st.plotly_chart(plot)
                 st.caption('Anomalies')
-                st.line_chart(y_3[['True','Predicted']]) 
+                plot=px.scatter(x=y_3.index,y='Predicted', data_frame=y_3,color="True")
+                st.plotly_chart(plot)
                 
                 st.write("""
-                         As you can see, in every scenario our model succeed to predict the beginning of the anomaly which is our goal.
-                         For the 1st scenario, the model succesfully predict the first anomalies but at some point it does no longer consider them as anomalies when the flow reduces.
-                         For the 2nd scenario, the prediction is almost perfect.
-                         For the 3rd scenario, we have the same results as with the 1st scenario.
-                         Thus our prediction is satisfying.
+                         In each scenario, we can predict leaks in less than a day, yet we can see more waste than with the abrupt scenario.
+                         
+                         The main explanation, is that these scenarios contains a certain % of leakage, in real case we want to detect the leak as soon as possible, which would correspond to a scenario like the 2nd where we have the best results.
+                         
+                         Therefore our prediction is satisfying.
                          """) 
+                
+                
+        
                 
                 
         
