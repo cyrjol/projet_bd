@@ -7,10 +7,11 @@ This is a temporary script file.
 
 
 import streamlit as st
+import matplotlib
 import pandas as pd
 from PIL import Image
 import plotly.express as px 
-import matplotlib 
+ 
 def app():
     st.header('Data processing')
       
