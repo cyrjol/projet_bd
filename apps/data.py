@@ -22,7 +22,7 @@ def app():
              
              
              """)
-    st.caption('Correlation Matrix Nodes')
+    st.write(' *Correlation Matrix Nodes* ')
     corr_1=pd.read_csv('data/scenario1/corr_1.csv')
     st.dataframe(corr_1.style.background_gradient())
     
@@ -32,7 +32,7 @@ def app():
              
              """)
     
-    st.caption('Correlation Matrix Links')
+    st.write(' *Correlation Matrix Links* ')
     corr_2=pd.read_csv('data/scenario1/corr_2.csv')
     st.dataframe(corr_2.style.background_gradient())
     
@@ -49,7 +49,7 @@ def app():
             Yet, *Link 110* has 0.70 correlation with *Link 21* and considering we have already two Links features, we can also eliminate *Link 110*.
              """)
     
-    st.caption('Correlation Matrix Pressures')
+    st.write(' *Correlation Matrix Pressures* ')
     corr_3=pd.read_csv('data/scenario1/corr_3.csv')
     st.dataframe(corr_3.style.background_gradient())
     
@@ -105,7 +105,7 @@ def app():
     
     y.rename(columns={'Label': 'True', '0':'Predicted'},inplace=True)
     
-    st.caption('Anomalies')
+    st.write(' *Anomalies* ')
     plot=px.scatter(x=y.index,y='Predicted', data_frame=y,color="True")
     st.plotly_chart(plot)
     
@@ -129,15 +129,15 @@ def app():
     
     mat =Image.open("data/scenario505/matrix.png")
     st.image(mat, caption='Training Confusion Matrix')
-    st.caption("""
+    st.write("""
                
-               Line: predicted value 
+               *Line: predicted value 
                
                Column : real value
                
                Class A : No Leak
                
-               Class B : Leak 
+               Class B : Leak* 
                
                
                """)
@@ -157,7 +157,7 @@ def app():
     
     y.rename(columns={'Label': 'True', '0':'Predicted'},inplace=True)
     
-    st.caption('Anomalies')
+    st.write(' *Anomalies* ')
     plot=px.scatter(x=y.index,y='Predicted', data_frame=y,color="True")
     st.plotly_chart(plot)
      
@@ -188,7 +188,7 @@ def app():
     
     y.rename(columns={'Label': 'True', '0':'Predicted'},inplace=True)
     
-    st.caption('Anomalies')
+    st.write(' *Anomalies* ')
     plot=px.scatter(x=y.index,y='Predicted', data_frame=y,color="True")
     st.plotly_chart(plot)
      
