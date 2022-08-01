@@ -8,6 +8,7 @@ Created on Mon Jul 18 10:46:14 2022
 import streamlit as st
 from multiapp import MultiApp
 import plotly.express as px
+import matplotlib
 from apps import home, data, pred # import your app modules here
 
 app = MultiApp()
