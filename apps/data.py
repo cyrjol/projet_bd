@@ -188,7 +188,7 @@ def app():
     
     y.rename(columns={'Label': 'True', '0':'Predicted'},inplace=True)
     
-    st.write(' *Anomalies* ')
+    st.caption(' *Anomalies* ')
     plot=px.scatter(x=y.index,y='Predicted', data_frame=y,color="True")
     st.plotly_chart(plot)
      
