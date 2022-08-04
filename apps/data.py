@@ -134,8 +134,19 @@ def app():
     
     
     mat =Image.open("data/scenario505/matrix.png")
-    st.image(mat, caption='Training Confusion Matrix            Line : predicted value         Column : real value            Class A : No Leak           Class B : Leak ')
-               
+    st.image(mat, caption='Training Confusion Matrix ')
+    st.write("""   
+    *Line : predicted value*         
+    
+    *Column : real value*            
+    
+    *Class A : No Leak*           
+    
+    *Class B : Leak*
+    
+    """)
+    
+    
                
                
                
