@@ -136,7 +136,7 @@ def app():
    
         
     mat =Image.open("data/scenario505/matrix.png")
-    st.image(mat, caption='Training Confusion Matrix '°        
+    st.image(mat, caption='Training Confusion Matrix ')        
                                  
              
                           
