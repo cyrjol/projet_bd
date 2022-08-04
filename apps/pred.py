@@ -123,7 +123,7 @@ def app():
                        These false anomalies happen during the Summer when the water demands varies more which misslead our model, yet it is acceptable.
                        
                        
-                       Therefore our prediction is satisfying.
+                       We could also implement a business rule like for instance : we send a technician after 24h of anomaly.
                        """) 
 
 
@@ -198,7 +198,7 @@ def app():
                 st.write("""
                          In each scenario, we can predict leaks in less than a day, yet we can see more waste than with the abrupt scenario.
                          
-                         The main explanation, is that these scenarios contains a certain % of leakage, in real case we want to detect the leak as soon as possible, which would correspond to a scenario like the 2nd where we have the best results.
+                         The main explanation, is that these scenarios contains a certain % of leakage, in real case we want to detect the leak as soon as possible, which would correspond to a scenario with a few % of leak like the 2nd where we have the best results.
                          
                          Therefore our prediction is satisfying.
                          """) 
