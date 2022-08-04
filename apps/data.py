@@ -17,6 +17,8 @@ def app():
       
    
     st.write("""
+             After some experimentation, we choose to do the preprocessing and the training on the 505th scenario because it is an abrupt scenario with a total of 20% of leak on the year,
+             so the model has a certain amount of leak to detect.
              
              We could use all the dataset, yet some of the variables seems to be very similar, so we could consider to avoid considering multiple features.
              
@@ -77,21 +79,23 @@ def app():
                  
                 - Time Series
                 
-                - Unsupervised Classification 
+                - Classification 
             
-             We choose the 2nd option because it was the easiest to begin with and finally it had better results. 
+             We choose the 2nd option because it was the easiest to begin with. 
             
              Eventhough the dataset contains labels, we want to use an **unsupervised** model which would be more accurate of a real use case where we do not have the labels instateniously.
             
-             We used the *PYOD* API which includes different algorithms dedicated to anomaly detection. Thus, we tried some unsupervised model like *kNN, Isolation Forest and Autoencoder*.
+             We used the *PYOD* API  dedicated to anomaly detection. Thus, we tried some unsupervised model like *kNN, Isolation Forest and Autoencoder*.
              
              At the end, we had the best results with a **PCA** model.
              
              Principal component analysis (PCA) can be used in detecting outliers. PCA is a linear dimensionality reduction using Singular Value Decomposition of the data to project it to a lower dimensional space.
 
-            In this procedure, covariance matrix of the data can be decomposed to orthogonal vectors, called eigenvectors, associated with eigenvalues. The eigenvectors with high eigenvalues capture most of the variance in the data.
+            In this procedure, covariance matrix of the data can be decomposed to orthogonal vectors, called eigenvectors, associated with eigenvalues. 
 
-            Therefore, a low dimensional hyperplane constructed by k eigenvectors can capture most of the variance in the data. However, outliers are different from normal data points, which is more obvious on the hyperplane constructed by the eigenvectors with small eigenvalues.
+            Therefore, a low dimensional hyperplane constructed by k eigenvectors can capture most of the variance in the data. 
+            
+            However, outliers are different from normal data points, which is more obvious on the hyperplane constructed by the eigenvectors with small eigenvalues.
 
             Therefore, outlier scores can be obtained as the sum of the projected distance of a sample on all eigenvectors.
              
@@ -130,16 +134,29 @@ def app():
     
     
     mat =Image.open("data/scenario505/matrix.png")
-    st.image(mat, caption='Training Confusion Matrix')
+    st.image(mat, caption='Training Confusion Matrix
+             
+             **Line** : *predicted value* 
+               
+               **Column** : *real value*
+               
+               **Class A** : *No Leak*
+               
+               **Class B** : *Leak* '
+            
+            
+            
+            )
     st.write("""
                
-               *Line: predicted value 
-               
-               Column : real value
-               
-               Class A : No Leak
-               
-               Class B : Leak* 
+                We can see that our model has pretty good metrics :
+                - Negative Predictive Value (the percentage of well-detected anomalies) : **44,33%** , the model is made to detect a maximum of 10% outliers.
+                
+                Therefore it misses a lot of outliers, however we notice that the beginning of the leak is well detected, this is our main objective.
+                
+                - Specify Rate (the percentage of true outliers that are detected) : **98,00 %**, the model makes few mistakes.
+                
+                The model is not perfect, yet it has good insights, so it's a good start to work on.
                
                
                """)
