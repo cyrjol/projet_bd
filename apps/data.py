@@ -112,9 +112,6 @@ def app():
     y.rename(columns={'Label': 'True', '0':'Predicted'},inplace=True)
     
     st.write(' *Anomalies* ')
-    plot=px.scatter(x=y.index,y='Predicted', data_frame=y,color="True")
-    st.plotly_chart(plot)
-    
     st.write("""
              The color of the points corresponds to the true value of leakage :
             
@@ -132,9 +129,10 @@ def app():
              
              """)
     
+    plot=px.scatter(x=y.index,y='Predicted', data_frame=y,color="True")
+    st.plotly_chart(plot)
     
-    mat =Image.open("data/scenario505/matrix.png")
-    st.image(mat, caption='Training Confusion Matrix ')
+    
     st.write("""   
     *Line : predicted value*         
     
@@ -145,6 +143,10 @@ def app():
     *Class B : Leak*
     
     """)
+    
+    
+    mat =Image.open("data/scenario505/matrix.png")
+    st.image(mat, caption='Training Confusion Matrix ')
     
     
                
