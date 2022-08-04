@@ -134,19 +134,18 @@ def app():
     
     
     mat =Image.open("data/scenario505/matrix.png")
-    st.image(mat, caption='Training Confusion Matrix
+    st.image(mat, caption='Training Confusion Matrix **Line** : *predicted value* **Column** : *real value* **Class A** : *No Leak* **Class B** : *Leak* ')
+               
+               
+               
+               
+               
+               
              
-             **Line** : *predicted value* 
                
-               **Column** : *real value*
-               
-               **Class A** : *No Leak*
-               
-               **Class B** : *Leak* '
             
             
-            
-            )
+
     st.write("""
                
                 We can see that our model has pretty good metrics :
