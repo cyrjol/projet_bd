@@ -70,7 +70,7 @@ def app():
              Moreover we have **scaled** the data so it would be easier to train our model in the future. 
              
              """)
-    st.dataframe(pd.read_csv('data/scenario1/df_min.csv',parse_dates=['timestamp'], index_col='timestamp'))
+    st.dataframe(pd.read_csv('data/scenario1/df.csv',parse_dates=['timestamp'], index_col='timestamp'))
     
     st.header('Training')
     st.write("""
