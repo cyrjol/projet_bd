@@ -17,19 +17,19 @@ def app():
              
     
     #data not scaled for plotting ( i:i,cipient, a: abrupt, n: no leaked)
-        i_1 = pd.read_csv('data/scenario1/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
-        i_2 = pd.read_csv('data/scenario2/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
-        i_3 = pd.read_csv('data/scenario3/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
+        i_1 = pd.read_csv('data/scenario1/df.csv',parse_dates=['timestamp'], index_col='timestamp')
+        i_2 = pd.read_csv('data/scenario2/df.csv',parse_dates=['timestamp'], index_col='timestamp')
+        i_3 = pd.read_csv('data/scenario3/df.csv',parse_dates=['timestamp'], index_col='timestamp')
 
 
-        a_5 = pd.read_csv('data/scenario5/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
-        a_6 = pd.read_csv('data/scenario6/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
-        a_22 = pd.read_csv('data/scenario22/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
+        a_5 = pd.read_csv('data/scenario5/df.csv',parse_dates=['timestamp'], index_col='timestamp')
+        a_6 = pd.read_csv('data/scenario6/df.csv',parse_dates=['timestamp'], index_col='timestamp')
+        a_22 = pd.read_csv('data/scenario22/df.csv',parse_dates=['timestamp'], index_col='timestamp')
 
 
-        n_4 = pd.read_csv('data/scenario4/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
-        n_7 = pd.read_csv('data/scenario7/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
-        n_10 = pd.read_csv('data/scenario10/df_full.csv',parse_dates=['timestamp'], index_col='timestamp')
+        n_4 = pd.read_csv('data/scenario4/df.csv',parse_dates=['timestamp'], index_col='timestamp')
+        n_7 = pd.read_csv('data/scenario7/df.csv',parse_dates=['timestamp'], index_col='timestamp')
+        n_10 = pd.read_csv('data/scenario10/df.csv',parse_dates=['timestamp'], index_col='timestamp')
     #data not scaled for plotting
     
     #true labels
